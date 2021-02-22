@@ -26,7 +26,7 @@
   <div class="container content">
     <ol>
       <li>
-        <h3><span class="num"></span> CSS Starter template-</h3>
+        <h3><span class="num"></span>CSS Starter template-</h3>
 <pre><code class="language-css">
 /*--------------------------------------------------------------------------------------------------
 -- Defaults
@@ -46,7 +46,7 @@
       </li>
 
       <li>
-        <h3><span class="num"></span>  Bootstrap variables-</h3>
+        <h3><span class="num"></span>Bootstrap variables-</h3>
 <pre><code class="language-css">
 /*--------------------------------------------------------------------------------------------------
 -- Variables(Bootstrap)
@@ -85,12 +85,12 @@
       </li>
 
       <li>
-        <h3><span class="num"></span> fetch API github prototype with link-</h3>
+        <h3><span class="num"></span>fetch API github prototype with link-</h3>
 <pre><code class="language-js">
 //--------------------------------------------------------------------------------------------------
 // fetch API prototype
 //--------------------------------------------------------------------------------------------------
-fetch('url')  // Default request method is GET
+fetch('url')  // Default request method is GET and request is async
   .then(res => res.json())
   .then(data => console.log(data))
   .catch(error => console.log(error));
@@ -105,18 +105,59 @@ fetch('url', {
   },
   credentials: "same-origin"
 })
-  .then(function(response) {
-    response.status     //=> number 100–599
-    response.statusText //=> String
-    response.headers    //=> Headers
-    response.url        //=> String
-
-    return response.text()
-  }, function(error) {
-    error.message //=> String
-  })
+  .then(res => res.json())
+  .then(result => console.log(result))
+  .catch(err => console.log(err.message);
 
 // link to github documentation- https://github.github.io/fetch/
+</code></pre>
+      </li>
+
+      <li>
+        <h3><span class="num"></span>Handling POST data comming to a php file-</h3>
+<pre><code class="language-js">
+/**
+* receive_body___send_response.php
+*/
+$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+// Set initial response
+$response = [
+  'value' => 0,
+  'error' => 'Nothing happened',
+  'data' => null,
+];
+
+if ($contentType === "application/json") {
+
+  // Receive the RAW post data.
+  $content = trim(file_get_contents("php://input"));
+
+  // $decoded can be used the same as you would use $_POST in $.ajax
+  $decoded = json_decode($content, true);
+  
+  if(is_array($decoded)) {
+    // NOTE: Sometimes for some reason I have to add the next line as well
+    /* $decoded = json_decode($decoded, true); */
+
+    // Do something with received data and include it in reponse
+    /* perhaps database manipulation here */
+    $response['data'] = $decoded;
+
+    // Success
+    $response['value'] = 1;
+    $response['error'] = null;
+  } else {
+    // The JSON is invalid.
+    $response['error'] = 'Received JSON is improperly formatted';
+  }
+} else {
+  // Content-Type is incorrect
+  $response['error'] =  'Content-Type is not set as "application/json"';
+}
+
+// echo response for fetch API
+echo json_encode($response);
 </code></pre>
       </li>
 
@@ -125,7 +166,7 @@ fetch('url', {
 
   <!-- Footer -->
   <footer>
-    Page credit goes to "@$hw@n!"
+    Credit goes to "@$hw@n!"
   </footer>
 
   <!--------------------------------------------------------------------------------------------------------------------------------
@@ -141,7 +182,7 @@ fetch('url', {
       let counter = 0;
 
       numSpans.forEach(i => {
-        i.innerHTML = ++counter + ".";
+        i.innerHTML = ++counter + ". ";
       });
 
     });
