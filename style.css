@@ -79,15 +79,11 @@ footer {
 --------------------------------------------------------------------------------------------------*/
 pre[class*="language-"] {
   border-radius: 0 !important;
-  padding: 0 !important;
-}
-
-.toolbar-item {
-  padding: .5em !important;
+  /* padding: 0 !important; */
 }
 
 .toolbar-item button {
-  padding: .2em .8em !important;
+  padding: .1em .5em !important;
   border: 1px solid #fff !important; 
   border-radius: 50px !important;
   font-size: 1rem !important;
