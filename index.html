@@ -27,9 +27,9 @@
     <ol>
       <li>
         <h3><span class="num"></span>CSS Starter template-</h3>
-<pre><code class="language-css">/*--------------------------------------------------------------------------------------------------
+<pre><code class="language-css">/*--------------------------------------------------
 -- Defaults
---------------------------------------------------------------------------------------------------*/
+--------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -46,9 +46,9 @@
 
       <li>
         <h3><span class="num"></span>Bootstrap variables-</h3>
-<pre><code class="language-css">/*--------------------------------------------------------------------------------------------------
+<pre><code class="language-css">/*--------------------------------------------------
 -- Variables(Bootstrap)
---------------------------------------------------------------------------------------------------*/
+--------------------------------------------------*/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -84,9 +84,9 @@
 
       <li>
         <h3><span class="num"></span>fetch API github prototype with link-</h3>
-<pre><code class="language-js">//--------------------------------------------------------------------------------------------------
+<pre><code class="language-js">//--------------------------------------------------
 // fetch API prototype
-//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------
 fetch('url')  // Default request method is GET and request is async
   .then(res => res.json())
   .then(data => console.log(data))
@@ -107,6 +107,15 @@ fetch('url', {
   .catch(err => console.log(err.message);
 
 // link to github documentation- https://github.github.io/fetch/
+</code></pre>
+      </li>
+
+      <li>
+        <h3><span class="num"></span>Comma seperated numbers-</h3>
+<pre><code class="language-js">// formats numbers with commas
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 </code></pre>
       </li>
 
@@ -170,6 +179,9 @@ echo json_encode($response);
   --------------------------------------------------------------------------------------------------------------------------------->
   <script src="./prismJS/prism.js"></script>
 
+  <!---------------------------------------------------------------------------------------------------
+  --  JS Script
+  ---------------------------------------------------------------------------------------------------->
   <script>
     // Showing the number of elements
     document.addEventListener('DOMContentLoaded', () => {
