@@ -83,6 +83,25 @@
       </li>
 
       <li>
+        <h3><span class="num"></span>Comma seperated numbers-</h3>
+<pre><code class="language-js">// formats numbers with commas
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</code></pre>
+      </li>
+
+      <li>
+        <h3><span class="num"></span>Converting a Timestamp string to a date or time-</h3>
+<pre><code class="language-js">// Converts to local date
+new Date('date_string_here').toLocaleDateString();
+
+// Converts to local time
+new Date('date_string_here').toLocaleTimeString();
+</code></pre>
+      </li>
+
+      <li>
         <h3><span class="num"></span>fetch API github prototype with link-</h3>
 <pre><code class="language-js">//--------------------------------------------------
 // fetch API prototype
@@ -107,15 +126,6 @@ fetch('url', {
   .catch(err => console.log(err.message);
 
 // link to github documentation- https://github.github.io/fetch/
-</code></pre>
-      </li>
-
-      <li>
-        <h3><span class="num"></span>Comma seperated numbers-</h3>
-<pre><code class="language-js">// formats numbers with commas
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 </code></pre>
       </li>
 
