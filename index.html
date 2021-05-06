@@ -19,7 +19,7 @@
   <nav>
     <div class="container logo">
       <img src="./img/rocketDoc.png" alt="logo not found">
-      <h6>Cheet Sheet for fast coding<></h6>
+      <h6>Cheet Sheet for fast coding <></h6>
     </div>
   </nav>
 
@@ -116,21 +116,19 @@ fetch('url')  // Default request method is GET and request is async
 fetch('url', {
   method: "POST",
   body: JSON.stringify(data),
-  headers: {
-    "Content-Type": "application/json"
-  },
+  headers: {"Content-Type": "application/json"},
   credentials: "same-origin"
 })
   .then(res => res.json())
   .then(result => console.log(result))
-  .catch(err => console.log(err.message);
+  .catch(err => console.log(err.message));
 
 // link to github documentation- https://github.github.io/fetch/
 </code></pre>
       </li>
 
       <li>
-        <h3><span class="num"></span>Handling POST data comming to a php file-</h3>
+        <h3><span class="num"></span>Handling POST(sent using fetch API) data comming to a php file-</h3>
 <pre><code class="language-js">/**
 * receive_body___send_response.php
 */
@@ -173,6 +171,47 @@ if ($contentType === "application/json") {
 
 // echo response for fetch API
 echo json_encode($response);
+</code></pre>
+      </li>
+
+      <li>
+        <h3><span class="num"></span>JS: XMLHttpRequest(AJAX)-</h3>
+<pre><code class="language-js">-------------------------------------------------------------
+  readyState:	Holds the status of the XMLHttpRequest
+  0: "request not initialized"
+  1: "server connection established"
+  2: "request received"
+  3: "processing request"
+  4: "request finished and response is ready"
+
+status:	Returns the status-number of a request
+  200: "OK"
+  403: "Forbidden"
+  404: "Not Found"
+-------------------------------------------------------------
+
+// GET request
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'URL', true);
+xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById('demo').innerHTML =
+    this.responseText;
+  }
+};
+xhr.send();
+
+// POST request
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'ajax_test.asp', true);
+xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById('demo').innerHTML =
+    this.responseText;
+  }
+};
+xhr.send('fname=Henry&lname=Ford');
 </code></pre>
       </li>
 
