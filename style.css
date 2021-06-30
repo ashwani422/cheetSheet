@@ -12,25 +12,33 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #eee;
+  font-family: Quicksand;
+}
+
 .container {
   max-width: 850px;
   width: 90%;
   margin: 0 auto;
 }
 
-body {
-  background: #eee;
-  font-family: Quicksand;
+.shadow-box {
+  box-shadow: 0 5px 20px -5px rgba(100, 100, 100, .5);
 }
+
 
 /*--------------------------------------------------------------------------------------------------
 -- page styles
 --------------------------------------------------------------------------------------------------*/
+
+/* NavBar Style */
 nav {
   padding: .2em 0;
   background: #272822;
   color: #fff;
   font-size: 3rem;
+  box-shadow: 0 10px 10px -5px rgba(100, 100, 100, .8);
 }
 
 .logo {
@@ -42,6 +50,7 @@ nav {
   width: 5rem;
 }
 
+/* Content Style */
 .content {
   margin-top: 3em;
 }
